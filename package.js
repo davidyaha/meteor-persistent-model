@@ -19,6 +19,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('persistent-model');
+  api.use('davidyaha:persistent-model');
   api.addFiles('persistent-model-tests.js');
 });
