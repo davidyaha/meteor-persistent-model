@@ -1,6 +1,6 @@
 Package.describe({
   name: 'davidyaha:persistent-model',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Persistent base class for Meteor apps',
   git: 'https://github.com/davidyaha/meteor-persistent-model.git',
   documentation: 'README.md'
