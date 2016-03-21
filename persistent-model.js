@@ -2,8 +2,11 @@ PersistentModel = class PersistentModel {
   constructor(doc, collection) {
     this._collection = collection;
 
-    if (doc && doc._id) {
-      _.extend(this, doc);
+    if (doc) {
+      if (doc._id)
+        _.extend(this, doc);
+      else
+        this._changed = doc;
     }
   }
 
@@ -13,7 +16,7 @@ PersistentModel = class PersistentModel {
       if (!this._id) {
         this._id = this._collection.insert(this._changed);
       } else {
-        this._collection(this._id, {$set: this._changed});
+        this._collection.update(this._id, {$set: this._changed});
       }
     }
   }
